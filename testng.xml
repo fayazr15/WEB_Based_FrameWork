@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- <!-- To execute batch execution -->
+<suite name="Suite">
+  <test thread-count="2" name="TigetScripts">
+    <classes>
+      <class name="automationTestScripts.Organizations.CreatOrganisationTest"/>
+      <class name="automationTestScripts.Contacts.CreateContactWithOrganizationTest"/>
+      <class name="automationTestScripts.Organizations.CreateAndDeleteOrganizationTest"/>
+      <class name="automationTestScripts.Contacts.CreateContactAndDeleteWithOrgTest"/>
+    </classes>
+  </test> Test
+</suite> Suite
+
+To execute group execution
+<suite name="Suite">
+<groups>
+<run>
+<include name="smoke" ></include>
+<exclude name="regression"></exclude>
+</run>
+</groups>
+  <test thread-count="5" name="SmokeScripts">
+    <classes>
+      <class name="automationTestScripts.Organizations.CreatOrganisationTest"/>
+      <class name="automationTestScripts.Contacts.CreateContactWithOrganizationTest"/>
+      <class name="automationTestScripts.Organizations.CreateAndDeleteOrganizationTest"/>
+      <class name="automationTestScripts.Contacts.CreateContactAndDeleteWithOrgTest"/>
+    </classes>
+  </test> Test
+</suite> Suite
+ -->
+<!-- To execute parallel execution -->
+
+<suite name="Suite" parallel="methods">
+  <test thread-count="2" name="TigetScripts">
+    <classes>
+      <class name="automationTestScripts.Organizations.CreatOrganisationTest"/>
+      <class name="automationTestScripts.Contacts.CreateContactWithOrganizationTest"/>
+      <class name="automationTestScripts.Organizations.CreateAndDeleteOrganizationTest"/>
+      <class name="automationTestScripts.Contacts.CreateContactAndDeleteWithOrgTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+<!-- <!-- To execute cross-browser execution -->
+
+<suite name="Suite" parallel="tests">
+  <test thread-count="5" name="ChromeTest">
+  <parameter name="browser" value="chrome"></parameter>
+    <classes>
+      <class name="automationTestScripts.Organizations.CreatOrganisationTest"/>
+      <class name="automationTestScripts.Contacts.CreateContactWithOrganizationTest"/>
+      <class name="automationTestScripts.Organizations.CreateAndDeleteOrganizationTest"/>
+      <class name="automationTestScripts.Contacts.CreateContactAndDeleteWithOrgTest"/>
+    </classes>
+  </test> Test
+  <test thread-count="5" name="FirefoxTest">
+  <parameter name="browser" value="firefox"></parameter>
+    <classes>
+      <class name="automationTestScripts.Organizations.CreatOrganisationTest"/>
+      <class name="automationTestScripts.Contacts.CreateContactWithOrganizationTest"/>
+      <class name="automationTestScripts.Organizations.CreateAndDeleteOrganizationTest"/>
+      <class name="automationTestScripts.Contacts.CreateContactAndDeleteWithOrgTest"/>
+    </classes>
+  </test> Test
+</suite> Suite -->
